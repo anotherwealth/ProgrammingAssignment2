@@ -32,11 +32,6 @@ makeCacheMatrix <- function(x = matrix()) {
     ##    is the first time the function has been called or the options are 
     ##    different to last time the function was called returns false.
     checkOptList <- function(...) {
-
-        ## if checkOptList() has not previously been called - returns false
-        if (is.null(opt)) {
-            return(false)
-        }
         
         ## converts ... to list
         newOpt <- list(...)
@@ -47,11 +42,19 @@ makeCacheMatrix <- function(x = matrix()) {
             newOpt <- newOpt[order(names(newOpt))]
         }
         
+        ## if checkOptList() has not previously been called - returns false
+        if (is.null(optList)) {
+            ## stores new option list
+            optList <<- newOpt
+            
+            return(FALSE)
+        }
+        
         ## checks if new and old list are equal
-        ret <- (all.equal(opt,newOpt)[1] == TRUE)
+        ret <- (all.equal(optList,newOpt)[1] == TRUE)
         
         ## stores new option list
-        opt <<- newOpt
+        optList <<- newOpt
         
         ## returns result
         ret
