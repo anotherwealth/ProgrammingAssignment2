@@ -4,8 +4,7 @@
 
 ## I have extended functionality of example functions which
 ## do not take into account ... parameters which may change
-## the result
-
+## the result.
 
 ## makeCacheMatrix creates a 'cacheable' matrix
 
