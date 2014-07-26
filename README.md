@@ -74,25 +74,25 @@ there is no stored parameters.
 
 Try it out and see :
 
->mat1 <- matrix(c(4,5,3,8),2,2)
-> mat2 <- matrix(c(3,2,7,4),2,2)
-> x <- makeCacheMatrix(mat1)
+	> mat1 <- matrix(c(4,5,3,8),2,2)
+	> mat2 <- matrix(c(3,2,7,4),2,2)
+	> x <- makeCacheMatrix(mat1)
 
-> cacheSolve(x)
-           [,1]       [,2]
-[1,]  0.4705882 -0.1764706
-[2,] -0.2941176  0.2352941
+	> cacheSolve(x)
+			   [,1]       [,2]
+	[1,]  0.4705882 -0.1764706
+	[2,] -0.2941176  0.2352941
 
-> cacheSolve(x)
-getting cached data
-           [,1]       [,2]
-[1,]  0.4705882 -0.1764706
-[2,] -0.2941176  0.2352941
-> ##  SEE that cached results were accessed
+	> cacheSolve(x)
+	getting cached data
+			   [,1]       [,2]
+	[1,]  0.4705882 -0.1764706
+	[2,] -0.2941176  0.2352941
+	> ##  SEE that cached results were accessed
 
-> cacheSolve(x , b = mat2)
-           [,1]      [,2]
-[1,]  1.0588235  2.588235
-[2,] -0.4117647 -1.117647
-> ##  SEE that cached results were not accessed and a different 
-> ##  result was returned.
+	> cacheSolve(x , b = mat2)
+			   [,1]      [,2]
+	[1,]  1.0588235  2.588235
+	[2,] -0.4117647 -1.117647
+	> ##  SEE that cached results were not accessed and a different 
+	> ##  result was returned.
